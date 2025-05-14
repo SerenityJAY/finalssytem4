@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Beauty Nest</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <style>
+    body {
+      padding-top: 70px;
+      background: linear-gradient(135deg, #f3e8ff 0%, #d1c4e9 100%);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #3b2e5a;
+      min-height: 100vh;
+    }
+    .navbar {
+      background: rgba(255 255 255 / 0.85) !important;
+      backdrop-filter: saturate(180%) blur(20px);
+      box-shadow: 0 4px 15px rgb(59 46 90 / 0.15);
+    }
+    .nav-link.active {
+      font-weight: 700;
+      color: #7b5fcf !important;
+      border-bottom: 2px solid #7b5fcf;
+      border-radius: 0;
+    }
+    .btn-primary {
+      background: #7b5fcf;
+      border: none;
+      box-shadow: 0 4px 15px rgb(123 95 207 / 0.4);
+      transition: background 0.3s ease;
+    }
+    .btn-primary:hover,
+    .btn-primary:focus {
+      background: #5a3fa8;
+      box-shadow: 0 6px 20px rgb(90 63 168 / 0.6);
+    }
+    h1,
+    h2,
+    h4 {
+      font-family: 'Georgia', serif;
+      color: #4a3f6b;
+      text-shadow: 0 1px 3px rgba(123, 95, 207, 0.4);
+    }
+    .card {
+      border: none;
+      border-radius: 1rem;
+      box-shadow: 0 8px 20px rgb(123 95 207 / 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background: #f9f6ff;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgb(123 95 207 / 0.3);
+    }
+    .form-control:focus {
+      border-color: #7b5fcf;
+      box-shadow: 0 0 8px rgb(123 95 207 / 0.5);
+    }
+    .form-select:focus {
+      border-color: #7b5fcf;
+      box-shadow: 0 0 8px rgb(123 95 207 / 0.5);
+    }
+    table {
+      background: #f9f6ff;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgb(123 95 207 / 0.15);
+    }
+    .badge.bg-primary {
+      background-color: #7b5fcf !important;
+      box-shadow: 0 0 8px rgb(123 95 207 / 0.7);
+    }
+    a {
+      color: #7b5fcf;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      color: #5a3fa8;
+      text-decoration: underline;
+    }
+    .alert {
+      background: #e9d7ff;
+      border-color: #c9aaff;
+      color: #5a3fa8;
+      box-shadow: 0 4px 15px rgb(123 95 207 / 0.2);
+    }
+    /* Image styling for product cards */
+    .card-img-top {
+      border-top-left-radius: 1rem;
+      border-top-right-radius: 1rem;
+      height: 200px;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#" data-page="home">Beauty Nest</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div
+        class="collapse navbar-collapse justify-content-end"
+        id="navbarNav"
+      >
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active pointer" href="#" data-page="home"
+              >Home</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link pointer" href="#" data-page="products"
+              >Products</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link pointer" href="#" data-page="cart">Cart</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link pointer" href="#" data-page="checkout"
+              >Checkout</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link pointer" href="#" data-page="contact"
+              >Contact</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link pointer" href="#" data-page="about"
+              >About Us</a
+            >
+          </li>
+          <li class="nav-item dropdown d-none" id="userDropdown">
+            <a
+              class="nav-link dropdown-toggle pointer"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              id="userNameDisplay"
+            >
+              User
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item pointer" id="logoutBtn">Logout</a></li>
+            </ul>
+          </li>
+          <li class="nav-item" id="loginNavItem">
+            <a class="nav-link pointer" href="#" data-page="login">Login</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main container -->
+  <main class="container my-4" id="mainContent">
+    <!-- Content will be injected here -->
+  </main>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Data for products with more items and real images, prices in Philippine Peso (₱)
+    const products = [
+      {
+        id: 1,
+        name: "Natural Foundation",
+        description: "Lightweight foundation for a natural look.",
+        price: 499.00,
+        image:
+          "https://png.pngtree.com/png-clipart/20230425/original/pngtree-liquid-foundation-makeup-beauty-splash-png-image_9099958.png",
+      },
+      {
+        id: 2,
+        name: "Pink Lipstick",
+        description: "Vibrant pink lipstick for all occasions.",
+        price: 299.00,
+        image:
+          "https://ae01.alicdn.com/kf/HTB1fiLemyMnBKNjSZFoq6zOSFXaz/HANDAIYAN-Lip-Stick-Makeup-Glitter-Shining-Lipstick-Natural-Long-Lasting-Women-Moisturizing-Nourishing-Cosmetic-Lipstick-Tools.jpg",
+      },
+      {
+        id: 3,
+        name: "Moisturizing Cream",
+        description: "Hydrate your skin with this cream.",
+        price: 249.00,
+        image:
+          "https://img.freepik.com/premium-photo/moisturizing-beauty-cream-skincare-spa-cosmetics_360074-20803.jpg",
+      },
+      {
+        id: 4,
+        name: "Nail Polish Red",
+        description: "Bright red nail polish for a bold look.",
+        price: 250.00,
+        image:
+          "https://img.freepik.com/premium-photo/red-nail-polish-set-isolated-white_153090-438.jpg?w=2000",
+      },
+      {
+        id: 5,
+        name: "Face Serum",
+        description: "Nourishing serum for radiant skin.",
+        price: 199.00,
+        image:
+          "https://www.hellonaturalco.com/wp-content/uploads/2019/04/face-serum-malaysia-3-1024x1024.jpg",
+      },
+      {
+        id: 6,
+        name: "Eye Shadow Palette",
+        description: "A palette with vibrant and natural shades.",
+        price: 199.00,
+        image:
+          "https://ae01.alicdn.com/kf/HTB1eNWNaOnrK1Rjy1Xcq6yeDVXaM/FOCALLURE-original-Eye-shadow-Palette-18-Color-Shimmer-Matte-Beauty-Makeup-Set-Smoky-Eyeshadow-cosmetic.jpg",
+      },
+      {
+        id: 7,
+        name: "Blush Powder",
+        description: "Soft blush powder for a natural glow.",
+        price: 189.00,
+        image:
+          "https://th.bing.com/th/id/OIP._1rrcYA0TAUywhfSUUJGIgHaHa?rs=1&pid=ImgDetMain",
+      },
+      {
+        id: 8,
+        name: "Makeup Brushes Set",
+        description: "Complete set of brushes for flawless makeup.",
+        price: 299.00,
+        image:
+          "https://th.bing.com/th/id/OIP.I1xhbLJ8F7sC0Eqkj4s-EwHaHa?w=780&h=780&rs=1&pid=ImgDetMain",
+      },
+      {
+        id: 9,
+        name: "Lip Gloss",
+        description: "Shiny lip gloss for a luscious look.",
+        price: 199.00,
+        image:
+          "https://down-ph.img.susercontent.com/file/sg-11134201-22110-7w4ioq0wk6jv30",
+      },
+      {
+        id: 10,
+        name: "Sunscreen SPF 50",
+        description: "Protect your skin with this lightweight sunscreen.",
+        price: 399.00,
+        image:
+          "https://3989ac5bcbe1edfc864a-0a7f10f87519dba22d2dbc6233a731e5.ssl.cf2.rackcdn.com/integrativenutrition/Sunscreen_copy.jpg",
+      },
+      {
+        id: 11,
+        name: "Mascara",
+        description: "Volumizing mascara for dramatic lashes.",
+        price: 190.00,
+        image:
+          "https://th.bing.com/th/id/OIP.aEEcN6tducbRw_qcktJLgQHaE8?rs=1&pid=ImgDetMain",
+      },
+      {
+        id: 12,
+        name: "Primer",
+        description: "Smooth primer for long-lasting makeup.",
+        price: 299.00,
+        image:
+          "https://th.bing.com/th?id=OIF.sNpP2Yus7NQ%2f2eHYJmIgcQ&rs=1&pid=ImgDetMain",
+      },
+      {
+        id: 13,
+        name: "Contour Kit",
+        description: "Define your features with this contour kit.",
+        price: 199.00,
+        image:
+          "https://static.beautytocare.com/cdn-cgi/image/width=1600,height=1600,f=auto/media/catalog/product//m/a/makeup-revolution-ultra-contour-palette.jpg",
+      },
+      {
+        id: 14,
+        name: "Bronzer",
+        description: "Warm bronzer for a sun-kissed glow.",
+        price: 250.00,
+        image:
+          "https://th.bing.com/th/id/OIP.H6Xay7yJxsMZ95LTLgt9WQHaEK?rs=1&pid=ImgDetMain",
+      },
+      {
+        id: 15,
+        name: "Eyeliner",
+        description: "Precision eyeliner for bold eyes.",
+        price: 299.00,
+        image:
+          "https://www.elfcosmetics.com/dw/image/v2/BBXC_PRD/on/demandware.static/-/Sites-elf-master/default/dw8f077a88/81206_900px_100011.jpg?sw=1100&sh=1100&sm=fit&sfrm=jpg",
+      },
+      {
+        id: 16,
+        name: "Setting Spray",
+        description: "Keep your makeup fresh all day.",
+        price: 499.00,
+        image:
+          "https://th.bing.com/th/id/OIP.-aa9fMRU2S6JXs44xzChwgHaEK?rs=1&pid=ImgDetMain",
+      },
+      {
+        id: 17,
+        name: "Concealer",
+        description: "Cover imperfections with this concealer.",
+        price: 299.00,
+        image:
+          "https://th.bing.com/th/id/OIP.F3FuPvQ54hGJetxy_tPGOQHaLG?rs=1&pid=ImgDetMain",
+      },
+    ];
+
+    // User data for authentication (simple simulation)
+    const users = [
+      { username: "user1", password: "password1" },
+      { username: "user2", password: "password2" },
+    ];
+
+    // Utility functions for localStorage cart
+    function getCart() {
+      return JSON.parse(localStorage.getItem("cart")) || {};
+    }
+    function saveCart(cart) {
+      localStorage.setItem("cart", JSON.stringify(cart));
+    }
+    function clearCart() {
+      localStorage.removeItem("cart");
+    }
+
+    // Utility functions for user session
+    function getUser() {
+      return JSON.parse(sessionStorage.getItem("user"));
+    }
+    function setUser(user) {
+      sessionStorage.setItem("user", JSON.stringify(user));
+    }
+    function clearUser() {
+      sessionStorage.removeItem("user");
+    }
+
+    // Navigation and page rendering
+    const mainContent = document.getElementById("mainContent");
+    const navLinks = document.querySelectorAll(".nav-link[data-page]");
+    const userDropdown = document.getElementById("userDropdown");
+    const loginNavItem = document.getElementById("loginNavItem");
+    const userNameDisplay = document.getElementById("userNameDisplay");
+    const logoutBtn = document.getElementById("logoutBtn");
+
+    function setActiveNav(page) {
+      navLinks.forEach((link) => {
+        if (link.dataset.page === page) {
+          link.classList.add("active");
+        } else {
+          link.classList.remove("active");
+        }
+      });
+    }
+
+    function renderHome() {
+      setActiveNav("home");
+      mainContent.innerHTML = `
+        <div class="text-center">
+          <h1 class="display-4 fw-bold mb-3">Discover your Natural Beauty Secret</h1>
+          <p class="lead mb-4">Find beauty products that match your skin.</p>
+          <img src="https://cdn.britannica.com/35/222035-131-9FC95B31/makeup-cosmetics.jpg" alt="Natural beauty products displayed on a white background" class="img-fluid rounded shadow" />
+          <div class="mt-4">
+            <button class="btn btn-primary btn-lg" id="shopNowBtn">Shop Now</button>
+          </div>
+        </div>
+      `;
+
+      document.getElementById("shopNowBtn").addEventListener("click", () => {
+        renderProducts();
+      });
+    }
+
+    function renderProducts() {
+      setActiveNav("products");
+      let html = `
+        <h2 class="mb-4">Products</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+      `;
+      products.forEach((p) => {
+        html += `
+          <div class="col">
+            <div class="card h-100 shadow-sm">
+              <img src="${p.image}" class="card-img-top" alt="${p.name}" />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">${p.name}</h5>
+                <p class="card-text flex-grow-1">${p.description}</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="fw-bold">₱${p.price.toFixed(2)}</span>
+                  <button class="btn btn-sm btn-outline-primary add-to-cart-btn" data-id="${p.id}">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+      });
+      html += "</div>";
+      mainContent.innerHTML = html;
+
+      document.querySelectorAll(".add-to-cart-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const id = btn.dataset.id;
+          addToCart(id);
+        });
+      });
+    }
+
+    function addToCart(productId) {
+      const cart = getCart();
+      if (cart[productId]) {
+        cart[productId]++;
+      } else {
+        cart[productId] = 1;
+      }
+      saveCart(cart);
+      alert("Product added to cart!");
+      updateCartNavCount();
+    }
+
+    function updateCartNavCount() {
+      const cart = getCart();
+      const count = Object.values(cart).reduce((a, b) => a + b, 0);
+      const cartLink = document.querySelector('a[data-page="cart"]');
+      if (count > 0) {
+        cartLink.innerHTML = `Cart <span class="badge bg-primary rounded-pill">${count}</span>`;
+      } else {
+        cartLink.innerHTML = "Cart";
+      }
+    }
+
+    function renderCart() {
+      setActiveNav("cart");
+      const cart = getCart();
+      if (Object.keys(cart).length === 0) {
+        mainContent.innerHTML = `
+          <h2>Your Cart is Empty</h2>
+          <p><a href="#" id="goToProducts">Browse Products</a></p>
+        `;
+        document.getElementById("goToProducts").addEventListener("click", (e) => {
+          e.preventDefault();
+          renderProducts();
+        });
+        return;
+      }
+
+      let html = `
+        <h2 class="mb-4">Shopping Cart</h2>
+        <div class="table-responsive">
+          <table class="table align-middle">
+            <thead>
+              <tr>
+                <th>Product</th>
+                <th class="text-center">Price</th>
+                <th class="text-center">Quantity</th>
+                <th class="text-center">Subtotal</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+      `;
+
+      let total = 0;
+      for (const id in cart) {
+        const product = products.find((p) => p.id == id);
+        const qty = cart[id];
+        const subtotal = product.price * qty;
+        total += subtotal;
+        html += `
+          <tr data-id="${id}">
+            <td>${product.name}</td>
+            <td class="text-center">₱${product.price.toFixed(2)}</td>
+            <td class="text-center">
+              <input type="number" min="1" class="form-control form-control-sm qty-input" value="${qty}" style="width: 70px; margin: 0 auto;" />
+            </td>
+            <td class="text-center fw-bold">₱${subtotal.toFixed(2)}</td>
+            <td class="text-center">
+              <button class="btn btn-sm btn-danger remove-item-btn" title="Remove item">&times;</button>
+            </td>
+          </tr>
+        `;
+      }
+
+      html += `
+            </tbody>
+          </table>
+        </div>
+        <div class="d-flex justify-content-end align-items-center">
+          <h4>Total: ₱<span id="cartTotal">${total.toFixed(2)}</span></h4>
+        </div>
+        <div class="mt-4 d-flex justify-content-between">
+          <button class="btn btn-secondary" id="continueShoppingBtn">Continue Shopping</button>
+          <button class="btn btn-primary" id="proceedCheckoutBtn">Proceed to Checkout</button>
+        </div>
+      `;
+
+      mainContent.innerHTML = html;
+
+      // Event listeners for quantity inputs
+      document.querySelectorAll(".qty-input").forEach((input) => {
+        input.addEventListener("change", (e) => {
+          const tr = e.target.closest("tr");
+          const id = tr.dataset.id;
+          let val = parseInt(e.target.value);
+          if (isNaN(val) || val < 1) {
+            val = 1;
+            e.target.value = val;
+          }
+          const cart = getCart();
+          cart[id] = val;
+          saveCart(cart);
+          renderCart();
+          updateCartNavCount();
+        });
+      });
+
+      // Event listeners for remove buttons
+      document.querySelectorAll(".remove-item-btn").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          const tr = e.target.closest("tr");
+          const id = tr.dataset.id;
+          const cart = getCart();
+          delete cart[id];
+          saveCart(cart);
+          renderCart();
+          updateCartNavCount();
+        });
+      });
+
+      document.getElementById("continueShoppingBtn").addEventListener("click", () => {
+        renderProducts();
+      });
+
+      document.getElementById("proceedCheckoutBtn").addEventListener("click", () => {
+        renderCheckout();
+      });
+    }
+
+    function renderCheckout() {
+      setActiveNav("checkout");
+      const cart = getCart();
+      if (Object.keys(cart).length === 0) {
+        mainContent.innerHTML = `
+          <h2>Checkout</h2>
+          <p>Your cart is empty. Please add products before checking out.</p>
+          <p><a href="#" id="goToProducts">Browse Products</a></p>
+        `;
+        document.getElementById("goToProducts").addEventListener("click", (e) => {
+          e.preventDefault();
+          renderProducts();
+        });
+        return;
+      }
+
+      let total = 0;
+      for (const id in cart) {
+        const product = products.find((p) => p.id == id);
+        total += product.price * cart[id];
+      }
+
+      mainContent.innerHTML = `
+        <h2>Checkout</h2>
+        <form id="checkoutForm" novalidate>
+          <div class="mb-3">
+            <label for="fullName" class="form-label">Full Name *</label>
+            <input type="text" class="form-control" id="fullName" required />
+            <div class="invalid-feedback">Please enter your full name.</div>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email address *</label>
+            <input type="email" class="form-control" id="email" required />
+            <div class="invalid-feedback">Please enter a valid email.</div>
+          </div>
+          <div class="mb-3">
+            <label for="address" class="form-label">Shipping Address *</label>
+            <textarea class="form-control" id="address" rows="2" required></textarea>
+            <div class="invalid-feedback">Please enter your shipping address.</div>
+          </div>
+          <div class="mb-3">
+            <label for="paymentMethod" class="form-label">Payment Method *</label>
+            <select class="form-select" id="paymentMethod" required>
+              <option value="" selected disabled>Select a payment method</option>
+              <option value="creditCard">Credit Card</option>
+              <option value="paypal">PayPal</option>
+              <option value="cod">Cash on Delivery</option>
+            </select>
+            <div class="invalid-feedback">Please select a payment method.</div>
+          </div>
+          <h4>Total: ₱${total.toFixed(2)}</h4>
+          <button type="submit" class="btn btn-success mt-3">Place Order</button>
+        </form>
+      `;
+
+      const form = document.getElementById("checkoutForm");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        if (!form.checkValidity()) {
+          e.stopPropagation();
+          form.classList.add("was-validated");
+          return;
+        }
+        // Simulate order processing
+        clearCart();
+        updateCartNavCount();
+        alert("Thank you for your order! Your purchase has been processed.");
+        renderHome();
+      });
+    }
+
+    function renderContact() {
+      setActiveNav("contact");
+      mainContent.innerHTML = `
+        <h2>Contact Us</h2>
+        <form id="contactForm" novalidate>
+          <div class="mb-3">
+            <label for="contactName" class="form-label">Name *</label>
+            <input type="text" class="form-control" id="contactName" required />
+            <div class="invalid-feedback">Please enter your name.</div>
+          </div>
+          <div class="mb-3">
+            <label for="contactEmail" class="form-label">Email *</label>
+            <input type="email" class="form-control" id="contactEmail" required />
+            <div class="invalid-feedback">Please enter a valid email.</div>
+          </div>
+          <div class="mb-3">
+            <label for="contactMessage" class="form-label">Message *</label>
+            <textarea class="form-control" id="contactMessage" rows="4" required></textarea>
+            <div class="invalid-feedback">Please enter your message.</div>
+          </div>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+      `;
+
+      const form = document.getElementById("contactForm");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        if (!form.checkValidity()) {
+          e.stopPropagation();
+          form.classList.add("was-validated");
+          return;
+        }
+        alert("Thank you for contacting us! We will get back to you soon.");
+        form.reset();
+        form.classList.remove("was-validated");
+      });
+    }
+
+    function renderAbout() {
+      setActiveNav("about");
+      mainContent.innerHTML = `
+        <h2>About Us</h2>
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <img src="https://th.bing.com/th/id/OIP.LAvjU0PU3aWGjZh5Rp6CNAHaHa?rs=1&pid=ImgDetMain" alt="About us beauty products" class="img-fluid rounded shadow mb-4 mb-md-0" />
+          </div>
+          <div class="col-md-6">
+            <p class="lead">
+              At Beauty Nest, we believe in enhancing your natural beauty with products that are gentle, effective, and made from the finest ingredients. Our mission is to provide you with a curated selection of skincare and makeup essentials that empower you to feel confident and radiant every day.
+            </p>
+            <p>
+              Founded in 2025, we have grown into a trusted destination for beauty enthusiasts who value quality and authenticity. Our team carefully selects each product to ensure it meets our high standards for performance and sustainability.
+            </p>
+            <p>
+              Join us on this journey to discover your natural beauty secret. We are committed to supporting you with excellent customer service and a seamless shopping experience.
+            </p>
+          </div>
+        </div>
+      `;
+    }
+
+    // User Authentication (Bonus)
+    function renderLogin() {
+      setActiveNav("login");
+      mainContent.innerHTML = `
+        <h2>Login</h2>
+        <form id="loginForm" novalidate>
+          <div class="mb-3">
+            <label for="loginUsername" class="form-label">Username *</label>
+            <input type="text" class="form-control" id="loginUsername" required />
+            <div class="invalid-feedback">Please enter your username.</div>
+          </div>
+          <div class="mb-3">
+            <label for="loginPassword" class="form-label">Password *</label>
+            <input type="password" class="form-control" id="loginPassword" required />
+            <div class="invalid-feedback">Please enter your password.</div>
+          </div>
+          <button type="submit" class="btn btn-primary">Login</button>
+          <p class="mt-3">Don't have an account? <a href="#" id="showRegister">Register here</a></p>
+        </form>
+      `;
+
+      const form = document.getElementById("loginForm");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        if (!form.checkValidity()) {
+          e.stopPropagation();
+          form.classList.add("was-validated");
+          return;
+        }
+        const username = document.getElementById("loginUsername").value.trim();
+        const password = document.getElementById("loginPassword").value.trim();
+        const user = users.find(
+          (u) => u.username === username && u.password === password
+        );
+        if (user) {
+          setUser({ username });
+          alert("Login successful!");
+          updateUserUI();
+          renderHome();
+        } else {
+          alert("Invalid username or password.");
+        }
+      });
+
+      document.getElementById("showRegister").addEventListener("click", (e) => {
+        e.preventDefault();
+        renderRegister();
+      });
+    }
+
+    function renderRegister() {
+      setActiveNav("register");
+      mainContent.innerHTML = `
+        <h2>Register</h2>
+        <form id="registerForm" novalidate>
+          <div class="mb-3">
+            <label for="registerUsername" class="form-label">Username *</label>
+            <input type="text" class="form-control" id="registerUsername" required />
+            <div class="invalid-feedback">Please enter a username.</div>
+          </div>
+          <div class="mb-3">
+            <label for="registerPassword" class="form-label">Password *</label>
+            <input type="password" class="form-control" id="registerPassword" required />
+            <div class="invalid-feedback">Please enter a password.</div>
+          </div>
+          <div class="mb-3">
+            <label for="registerPasswordConfirm" class="form-label">Confirm Password *</label>
+            <input type="password" class="form-control" id="registerPasswordConfirm" required />
+            <div class="invalid-feedback" id="passwordMismatchFeedback">Passwords do not match.</div>
+          </div>
+          <button type="submit" class="btn btn-primary">Register</button>
+          <p class="mt-3">Already have an account? <a href="#" id="showLogin">Login here</a></p>
+        </form>
+      `;
+
+      const form = document.getElementById("registerForm");
+      const passwordInput = document.getElementById("registerPassword");
+      const passwordConfirmInput = document.getElementById("registerPasswordConfirm");
+      const passwordMismatchFeedback = document.getElementById("passwordMismatchFeedback");
+
+      function validatePasswords() {
+        if (passwordInput.value !== passwordConfirmInput.value) {
+          passwordConfirmInput.setCustomValidity("Passwords do not match");
+          passwordMismatchFeedback.style.display = "block";
+        } else {
+          passwordConfirmInput.setCustomValidity("");
+          passwordMismatchFeedback.style.display = "none";
+        }
+      }
+
+      passwordInput.addEventListener("input", validatePasswords);
+      passwordConfirmInput.addEventListener("input", validatePasswords);
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        validatePasswords();
+        if (!form.checkValidity()) {
+          e.stopPropagation();
+          form.classList.add("was-validated");
+          return;
+        }
+        const username = document.getElementById("registerUsername").value.trim();
+        const password = passwordInput.value.trim();
+
+        if (users.find((u) => u.username === username)) {
+          alert("Username already exists. Please choose another.");
+          return;
+        }
+        users.push({ username, password });
+        alert("Registration successful! Please login.");
+        renderLogin();
+      });
+
+      document.getElementById("showLogin").addEventListener("click", (e) => {
+        e.preventDefault();
+        renderLogin();
+      });
+    }
+
+    function updateUserUI() {
+      const user = getUser();
+      if (user) {
+        userNameDisplay.textContent = user.username;
+        userDropdown.classList.remove("d-none");
+        loginNavItem.classList.add("d-none");
+      } else {
+        userDropdown.classList.add("d-none");
+        loginNavItem.classList.remove("d-none");
+      }
+    }
+
+    logoutBtn.addEventListener("click", () => {
+      clearUser();
+      updateUserUI();
+      renderHome();
+    });
+
+    // Navigation click handler
+    navLinks.forEach((link) => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        const page = link.dataset.page;
+        if (page === "home") renderHome();
+        else if (page === "products") renderProducts();
+        else if (page === "cart") renderCart();
+        else if (page === "checkout") renderCheckout();
+        else if (page === "contact") renderContact();
+        else if (page === "about") renderAbout();
+        else if (page === "login") renderLogin();
+      });
+    });
+
+    // Initial load
+    updateUserUI();
+    updateCartNavCount();
+    renderHome();
+  </script>
+</body>
+</html>
